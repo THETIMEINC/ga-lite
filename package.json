@@ -23,6 +23,7 @@
     "ga.js",
     "pagespeed"
   ],
+  "private": true,
   "author": "Jesse Luoto",
   "license": "MIT",
   "devDependencies": {
