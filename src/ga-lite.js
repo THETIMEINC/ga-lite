@@ -1,4 +1,3 @@
-import doNotTrackEnabled from './do-not-track-enabled'
 import galiteCommands from './ga-lite-commands'
 import { getTracker } from './tracker-store'
 import Tracker, { DEFAULT_TRACKER_NAME } from './tracker'
@@ -6,12 +5,6 @@ import getTasksInCommandQueue from './get-tasks-in-command-queue'
 import './simple-polyfill-array-from'
 
 export default function galite(command, ...values) {
-  // Check for doNotTrack variable. If it's present, the user has decided to
-  // opt-out of the tracking, so we kill this tracking script
-  if (doNotTrackEnabled()) {
-    return
-  }
-
   const [trackerName, trackerCommand] = splitTrackerCommand(command)
 
   const commandFoundInGlobalCommands = !!galiteCommands[command]

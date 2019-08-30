@@ -111,14 +111,6 @@ Array.from = Array.from || function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./src/do-not-track-enabled.js
-function doNotTrackEnabled() {
-  var dntNumber = parseInt(navigator.msDoNotTrack || // Internet Explorer 9 and 10 vendor prefix
-  window.doNotTrack || // IE 11 uses window.doNotTrack
-  navigator.doNotTrack, // W3C
-  10);
-  return dntNumber === 1;
-}
 // CONCATENATED MODULE: ./src/tracker-store.js
 var store = {};
 function addTracker(trackerName, tracker) {
@@ -485,14 +477,7 @@ function ga_lite_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 function galite(command) {
-  // Check for doNotTrack variable. If it's present, the user has decided to
-  // opt-out of the tracking, so we kill this tracking script
-  if (doNotTrackEnabled()) {
-    return;
-  }
-
   var _splitTrackerCommand = splitTrackerCommand(command),
       _splitTrackerCommand2 = ga_lite_slicedToArray(_splitTrackerCommand, 2),
       trackerName = _splitTrackerCommand2[0],
