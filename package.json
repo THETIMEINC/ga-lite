@@ -1,5 +1,5 @@
 {
-  "name": "ga-lite",
+  "name": "@THETIMEINC/ga-lite",
   "version": "2.0.5",
   "description": "Small, cacheable subset of Google Analytics JS client",
   "jsdelivr": "dist/ga-lite.min.js",
